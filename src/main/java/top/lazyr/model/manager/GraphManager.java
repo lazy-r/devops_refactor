@@ -105,7 +105,7 @@ public class GraphManager {
                 afferentNodes.add(graph.findNodeById(dependEdge.getInNodeId()));
             }
         }
-        return dependEdges.size() == 0 ? null : afferentNodes;
+        return afferentNodes.size() == 0 ? null : afferentNodes;
     }
 
     /**
@@ -128,7 +128,6 @@ public class GraphManager {
             }
         }
         return systemAfferentNodes.size() == 0 ? null : systemAfferentNodes;
-
     }
 
 
@@ -405,4 +404,52 @@ public class GraphManager {
         cloneNode.setAfferentNum(node.getAfferentNum());
         return cloneNode;
     }
+
+    /**
+     * 将一组Node转换为一组id
+     * 若nodes为null或size=0，则返回null
+     * @param nodes
+     * @return
+     */
+    public static List<String> nodes2Ids(List<Node> nodes) {
+        if (nodes == null || nodes.size() == 0) {
+            return null;
+        }
+        List<String> ids = new ArrayList<>();
+        for (Node node : nodes) {
+            ids.add(node.getId());
+        }
+        return ids;
+    }
+
+    /**
+     * 将一组id转换为一组Node
+     * 若ids为null或size=0，则返回null
+     * @param graph
+     * @param ids
+     * @return
+     */
+    public static List<Node> ids2Nodes(Graph graph, List<String> ids) {
+        if (ids == null || ids.size() == 0) {
+            return null;
+        }
+        List<Node> nodes = new ArrayList<>();
+        for (String id : ids) {
+            nodes.add(graph.findNodeById(id));
+        }
+        return nodes;
+    }
+
+
+    public static List<Node> ids2Nodes(Graph graph, Set<String> ids) {
+        if (ids == null || ids.size() == 0) {
+            return null;
+        }
+        List<Node> nodes = new ArrayList<>();
+        for (String id : ids) {
+            nodes.add(graph.findNodeById(id));
+        }
+        return nodes;
+    }
+
 }

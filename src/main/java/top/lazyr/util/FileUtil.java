@@ -88,7 +88,7 @@ public class FileUtil {
     }
 
     public static int catalogNum(String path) {
-        File catalog = new File(path);
+        File catalog = new File(prefixPath + path);
         if (!catalog.isDirectory()) {
             return 0;
         }
@@ -140,4 +140,8 @@ public class FileUtil {
         }
         return true;
     }
+
+
+
+
 }

@@ -1,0 +1,12 @@
+Population Size: 40
+Generations: 100
+Chromosome Length: 30
+Population Producer: 一次性生成
+Child Population Producer: 常规子代生成器
+Genetic Code Producer: moveFile
+Objectives: [枢纽型异味 不稳定依赖异味 环依赖异味 异味消除率, 耦合, 内聚]
+Crossover Operator: 单点交叉算子
+Mutation Operator: 单点变异算子
+Generation Driver: 迭代到最大代
+Fitness Calculator: 无
+Experimental data output directory: nsga2/exp13/

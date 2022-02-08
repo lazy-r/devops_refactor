@@ -151,15 +151,18 @@ public class Actuator {
 
         // 1、获取所有依赖fileNode的文件Node对应的组件
         Map<Node, Set<Node>> groups = GraphManager.groupAfferentNodesByComponentNode(graph, fileNode);
-        for (Node afferentComponentNode : groups.keySet()) {
-            // 1.1 若这些组件只依赖sourceComponentNode中fileNode，则删除依赖sourceComponentNode
-            Set<Node> fileNodes = groups.get(afferentComponentNode);
-            if (fileNodes.size() == 1) {
-                graph.removeDepend(afferentComponentNode, sourceComponentNode);
+        if (groups != null) {
+            for (Node afferentComponentNode : groups.keySet()) {
+                // 1.1 若这些组件只依赖sourceComponentNode中fileNode，则删除依赖sourceComponentNode
+                Set<Node> fileNodes = groups.get(afferentComponentNode);
+                if (fileNodes.size() == 1) {
+                    graph.removeDepend(afferentComponentNode, sourceComponentNode);
+                }
+                // 1.2 将这些组件添加依赖targetComponentNode
+                graph.addDepend(afferentComponentNode, targetComponentNode);
             }
-            // 1.2 将这些组件添加依赖targetComponentNode
-            graph.addDepend(afferentComponentNode, targetComponentNode);
         }
+
 
         // 2、在targetComponentNode中添加fileNode依赖的组件
         Set<Node> efferentComponentNodes = GraphManager.findEfferentComponentNodes(graph, fileNode);

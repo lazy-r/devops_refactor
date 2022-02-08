@@ -206,6 +206,5 @@ public class Cohesion extends AbstractObjectiveFunction {
             ids.add(node.getId());
         }
         return ids;
-
     }
 }

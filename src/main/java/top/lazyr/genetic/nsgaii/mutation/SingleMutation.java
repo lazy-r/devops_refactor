@@ -3,8 +3,12 @@ package top.lazyr.genetic.nsgaii.mutation;
 import top.lazyr.genetic.nsgaii.model.allele.AbstractAllele;
 import top.lazyr.genetic.nsgaii.model.allele.RefactorAllele;
 import top.lazyr.genetic.nsgaii.model.chromosome.Chromosome;
+import top.lazyr.genetic.nsgaii.model.chromosome.RefactorChromosome;
 import top.lazyr.refactor.list.RefactorListGenerator;
+import top.lazyr.util.ArrayUtil;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 /**
@@ -38,11 +42,12 @@ public class SingleMutation extends AbstractMutation {
 
         if (shouldPerformMutation()) {
             int point = ThreadLocalRandom.current().nextInt(chromosome.getLength());
-            String refactor = refactorList.generateOne(chromosome.getLength());
+            List<String> originRefactors = ((RefactorChromosome) chromosome).getRefactors();
+            List<String> currentRefactors = new ArrayList<>();
+            ArrayUtil.moveArr2Arr(currentRefactors, originRefactors, 0, point - 1);
+            String refactor = refactorList.generateOne(currentRefactors, chromosome.getLength());
             chromosome.setAllele(point, new RefactorAllele(refactor));
         }
-
-
         return chromosome;
     }
 }

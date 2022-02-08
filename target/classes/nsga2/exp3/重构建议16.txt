@@ -1,0 +1,30 @@
+moveFile,org.gjt.sp.jedit.gui.statusbar ~ COMPONENT ~ SYSTEM,org.gjt.sp.jedit.gui.statusbar.ClockWidgetFactory ~ FILE ~ SYSTEM,org.gjt.sp.jedit ~ COMPONENT ~ SYSTEM
+moveFile,org.gjt.sp.jedit.bsh.classpath ~ COMPONENT ~ SYSTEM,org.gjt.sp.jedit.bsh.classpath.ClassManagerImpl ~ FILE ~ SYSTEM,org.gjt.sp.jedit ~ COMPONENT ~ SYSTEM
+extractComponent,org.gjt.sp.jedit.ActionSet ~ FILE ~ SYSTEM>org.gjt.sp.jedit ~ COMPONENT ~ SYSTEM;org.gjt.sp.jedit.JEditActionSet ~ FILE ~ SYSTEM>org.gjt.sp.jedit ~ COMPONENT ~ SYSTEM,org.gjt.sp.from_jedit ~ COMPONENT ~ SYSTEM
+extractComponent,org.gjt.sp.jedit.buffer.Breakpoint ~ FILE ~ SYSTEM>org.gjt.sp.jedit.buffer ~ COMPONENT ~ SYSTEM;org.gjt.sp.jedit.buffer.JEditBuffer ~ FILE ~ SYSTEM>org.gjt.sp.jedit.buffer ~ COMPONENT ~ SYSTEM,org.gjt.sp.jedit.from_buffer ~ COMPONENT ~ SYSTEM
+moveFile,org.gjt.sp.jedit.msg ~ COMPONENT ~ SYSTEM,org.gjt.sp.jedit.msg.PluginUpdate ~ FILE ~ SYSTEM,org.gjt.sp.jedit ~ COMPONENT ~ SYSTEM
+moveFile,org.gjt.sp.jedit.input ~ COMPONENT ~ SYSTEM,org.gjt.sp.jedit.input.AbstractInputHandler ~ FILE ~ SYSTEM,org.gjt.sp.jedit.textarea ~ COMPONENT ~ SYSTEM
+extractComponent,org.gjt.sp.jedit.gui.StatusBar ~ FILE ~ SYSTEM>org.gjt.sp.jedit.gui ~ COMPONENT ~ SYSTEM;javax.swing.UIManager ~ FILE ~ NON_SYSTEM>javax.swing ~ COMPONENT ~ NON_SYSTEM,org.gjt.sp.jedit.from_gui ~ COMPONENT ~ SYSTEM
+moveFile,org.gjt.sp.jedit.syntax ~ COMPONENT ~ SYSTEM,org.gjt.sp.jedit.syntax.ModeProvider ~ FILE ~ SYSTEM,org.gjt.sp.jedit ~ COMPONENT ~ SYSTEM
+moveFile,org.gjt.sp.jedit.buffer ~ COMPONENT ~ SYSTEM,org.gjt.sp.jedit.buffer.JEditBuffer ~ FILE ~ SYSTEM,org.gjt.sp.jedit ~ COMPONENT ~ SYSTEM
+moveFile,org.gjt.sp.jedit.help ~ COMPONENT ~ SYSTEM,org.gjt.sp.jedit.help.HelpTOCPanel ~ FILE ~ SYSTEM,org.gjt.sp.jedit ~ COMPONENT ~ SYSTEM
+extractComponent,java.lang.String ~ FILE ~ NON_SYSTEM>java.lang ~ COMPONENT ~ NON_SYSTEM;org.gjt.sp.jedit.gui.GrabKeyDialog ~ FILE ~ SYSTEM>org.gjt.sp.jedit.gui ~ COMPONENT ~ SYSTEM,org.gjt.sp.jedit.from_gui ~ COMPONENT ~ SYSTEM
+moveFile,org.gjt.sp.util ~ COMPONENT ~ SYSTEM,org.gjt.sp.util.SyntaxUtilities ~ FILE ~ SYSTEM,org.gjt.sp.jedit.syntax ~ COMPONENT ~ SYSTEM
+extractComponent,java.lang.String ~ FILE ~ NON_SYSTEM>java.lang ~ COMPONENT ~ NON_SYSTEM;org.gjt.sp.jedit.bufferio.BufferSaveRequest ~ FILE ~ SYSTEM>org.gjt.sp.jedit.bufferio ~ COMPONENT ~ SYSTEM,org.gjt.sp.jedit.from_bufferio ~ COMPONENT ~ SYSTEM
+moveFile,org.gjt.sp.jedit.visitors ~ COMPONENT ~ SYSTEM,org.gjt.sp.jedit.visitors.SaveCaretInfoVisitor ~ FILE ~ SYSTEM,org.gjt.sp.jedit ~ COMPONENT ~ SYSTEM
+extractComponent,org.gjt.sp.jedit.buffer.LineManager ~ FILE ~ SYSTEM>org.gjt.sp.jedit.buffer ~ COMPONENT ~ SYSTEM;org.gjt.sp.jedit.buffer.JEditBuffer ~ FILE ~ SYSTEM>org.gjt.sp.jedit.buffer ~ COMPONENT ~ SYSTEM,org.gjt.sp.jedit.from_buffer ~ COMPONENT ~ SYSTEM
+moveFile,org.gjt.sp.jedit.gui.statusbar ~ COMPONENT ~ SYSTEM,org.gjt.sp.jedit.gui.statusbar.ErrorsWidgetFactory ~ FILE ~ SYSTEM,org.gjt.sp.jedit.gui ~ COMPONENT ~ SYSTEM
+extractComponent,org.gjt.sp.jedit.gui.DockableWindowManagerProvider ~ FILE ~ SYSTEM>org.gjt.sp.jedit.gui ~ COMPONENT ~ SYSTEM;org.gjt.sp.jedit.gui.DockableWindowManagerImpl ~ FILE ~ SYSTEM>org.gjt.sp.jedit.gui ~ COMPONENT ~ SYSTEM,org.gjt.sp.jedit.from_gui ~ COMPONENT ~ SYSTEM
+moveFile,org.gjt.sp.jedit.syntax ~ COMPONENT ~ SYSTEM,org.gjt.sp.jedit.syntax.TokenMarker ~ FILE ~ SYSTEM,org.gjt.sp.jedit ~ COMPONENT ~ SYSTEM
+moveFile,org.gjt.sp.jedit.help ~ COMPONENT ~ SYSTEM,org.gjt.sp.jedit.help.HelpViewer ~ FILE ~ SYSTEM,org.gjt.sp.jedit ~ COMPONENT ~ SYSTEM
+moveFile,org.gjt.sp.jedit.buffer ~ COMPONENT ~ SYSTEM,org.gjt.sp.jedit.buffer.ExplicitFoldHandler ~ FILE ~ SYSTEM,org.gjt.sp.jedit.textarea ~ COMPONENT ~ SYSTEM
+extractComponent,org.gjt.sp.jedit.msg.DockableWindowUpdate ~ FILE ~ SYSTEM>org.gjt.sp.jedit.msg ~ COMPONENT ~ SYSTEM;org.gjt.sp.jedit.gui.PanelWindowContainer ~ FILE ~ SYSTEM>org.gjt.sp.jedit.gui ~ COMPONENT ~ SYSTEM,org.gjt.sp.jedit.from_msg ~ COMPONENT ~ SYSTEM
+extractComponent,org.gjt.sp.jedit.gui.FontSelector ~ FILE ~ SYSTEM>org.gjt.sp.jedit.gui ~ COMPONENT ~ SYSTEM;org.gjt.sp.jedit.jEdit ~ FILE ~ SYSTEM>org.gjt.sp.jedit ~ COMPONENT ~ SYSTEM,org.gjt.sp.jedit.from_gui ~ COMPONENT ~ SYSTEM
+moveFile,org.gjt.sp.jedit.syntax ~ COMPONENT ~ SYSTEM,org.gjt.sp.jedit.syntax.DisplayTokenHandler ~ FILE ~ SYSTEM,org.gjt.sp.jedit.textarea ~ COMPONENT ~ SYSTEM
+moveFile,org.gjt.sp.util ~ COMPONENT ~ SYSTEM,org.gjt.sp.util.WorkRequest ~ FILE ~ SYSTEM,org.gjt.sp.jedit.pluginmgr ~ COMPONENT ~ SYSTEM
+extractComponent,org.gjt.sp.jedit.menu.DynamicMenuProvider ~ FILE ~ SYSTEM>org.gjt.sp.jedit.menu ~ COMPONENT ~ SYSTEM;org.gjt.sp.jedit.menu.EnhancedMenu ~ FILE ~ SYSTEM>org.gjt.sp.jedit.menu ~ COMPONENT ~ SYSTEM,org.gjt.sp.jedit.from_menu ~ COMPONENT ~ SYSTEM
+moveFile,org.gjt.sp.jedit.pluginmgr ~ COMPONENT ~ SYSTEM,org.gjt.sp.jedit.pluginmgr.PluginManager ~ FILE ~ SYSTEM,org.gjt.sp.jedit.options ~ COMPONENT ~ SYSTEM
+moveFile,org.gjt.sp.jedit.search ~ COMPONENT ~ SYSTEM,org.gjt.sp.jedit.search.SearchBar ~ FILE ~ SYSTEM,org.gjt.sp.jedit ~ COMPONENT ~ SYSTEM
+moveFile,org.gjt.sp.jedit.options ~ COMPONENT ~ SYSTEM,org.gjt.sp.jedit.options.StatusBarOptionPane ~ FILE ~ SYSTEM,org.gjt.sp.jedit ~ COMPONENT ~ SYSTEM
+moveFile,org.gjt.sp.jedit.gui.statusbar ~ COMPONENT ~ SYSTEM,org.gjt.sp.jedit.gui.statusbar.ToolTipLabel ~ FILE ~ SYSTEM,org.gjt.sp.jedit.gui ~ COMPONENT ~ SYSTEM
+moveFile,org.gjt.sp.jedit.textarea ~ COMPONENT ~ SYSTEM,org.gjt.sp.jedit.textarea.JEditTextArea ~ FILE ~ SYSTEM,org.gjt.sp.jedit ~ COMPONENT ~ SYSTEM

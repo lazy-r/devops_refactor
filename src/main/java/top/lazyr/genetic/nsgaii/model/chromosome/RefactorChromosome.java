@@ -14,7 +14,7 @@ import java.util.List;
  */
 public class RefactorChromosome extends Chromosome {
     /* 初始graph，用于克隆时还传递初始graph */
-    private Graph initGraph;
+    private Graph originGraph;
     /* 表现型：克隆graph后根据基因型进行重构后 */
     private Graph refactorGraph;
     private int succeed;
@@ -22,12 +22,12 @@ public class RefactorChromosome extends Chromosome {
 
     public RefactorChromosome(List<? extends AbstractAllele> geneticCode, Graph graph) {
         super(geneticCode);
-        this.initGraph = graph;
+        this.originGraph = graph;
     }
 
     public RefactorChromosome(RefactorChromosome chromosome) {
         super(chromosome);
-        this.initGraph = chromosome.initGraph;
+        this.originGraph = chromosome.originGraph;
     }
 
     public Graph getPhenotype() {
@@ -37,8 +37,8 @@ public class RefactorChromosome extends Chromosome {
         return refactorGraph;
     }
 
-    public Graph getInitGraph() {
-        return initGraph;
+    public Graph getOriginGraph() {
+        return originGraph;
     }
 
     /**
@@ -46,7 +46,7 @@ public class RefactorChromosome extends Chromosome {
      */
     private void refactor() {
         List<String> refactors = getRefactors();
-        this.refactorGraph = GraphManager.cloneGraph(initGraph);
+        this.refactorGraph = GraphManager.cloneGraph(originGraph);
         int[] succeedFailed = RefactorActuator.refactor(refactorGraph, refactors);
         succeed = succeedFailed[0];
         failed = succeedFailed[1];

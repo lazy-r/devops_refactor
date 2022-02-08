@@ -15,7 +15,7 @@ import java.util.concurrent.ThreadLocalRandom;
  * @author lazyr
  * @created 2022/2/5
  */
-public class RefactorListGenerator2 implements RefactorListGenerator {
+public class RefactorListGenerator2 extends RefactorListGenerator {
     private static Logger logger = LoggerFactory.getLogger(RefactorListGenerator2.class);
     private Graph graph;
     private List<Node> smellComponentNodes;
@@ -46,7 +46,7 @@ public class RefactorListGenerator2 implements RefactorListGenerator {
         this.smellComponentNodes = smellComponentNodes;
         initMoveFile();
         initExtractComponent();
-        System.out.println("可重构文件个数: " + this.moveFile.size());
+        System.out.println("可重构的文件个数: " + moveFileNodes.size());
     }
 
     private void initExtractComponent() {
@@ -99,8 +99,27 @@ public class RefactorListGenerator2 implements RefactorListGenerator {
     }
 
     @Override
+    public String generateOne(List<String> refactors, int r) {
+        return generateOne(r);
+    }
+
+    @Override
+    public List<String> generateList(int r) {
+        List<String> refactors = new ArrayList<>();
+        for (int i = 0; i < r; i++) {
+            String refactor = generateOne(r);
+            while (!refactorValidate(refactors, refactor)) { // 若无效，则继续随机生成，直到有效为止
+                refactor = generateOne(r);
+
+            }
+            refactors.add(refactor);
+        }
+        return refactors;
+    }
+
+    @Override
     public String getIntroduction() {
-        return "moveFile && extractComponent";
+        return "static moveFile && extractComponent";
     }
 
     private String generateMoveFile() {

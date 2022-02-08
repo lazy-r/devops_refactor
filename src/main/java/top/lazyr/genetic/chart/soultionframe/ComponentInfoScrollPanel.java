@@ -93,7 +93,7 @@ public class ComponentInfoScrollPanel extends JScrollPane {
 
         // 更新是否被重构信息
         boolean updated = catalogNode.isUpdated();
-        System.out.println(updatedArea.getText());
+        updatedArea.setText(updated ? "是" : "否");
 
         // 更新异味重构信息
         boolean originHubLike = catalogNode.isOriginHubLike();

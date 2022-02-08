@@ -5,7 +5,6 @@ import top.lazyr.genetic.nsgaii.model.chromosome.Chromosome;
 import top.lazyr.genetic.nsgaii.model.chromosome.RefactorChromosome;
 import top.lazyr.genetic.nsgaii.model.population.Population;
 import top.lazyr.genetic.nsgaii.selector.CrossoverParticipantCreator;
-import top.lazyr.genetic.nsgaii.selector.CrossoverParticipantCreatorProvider;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -64,7 +63,7 @@ public class SingleCrossover extends AbstractCrossover {
             fillAlleles(0, point, childAlleles, parent2);
             fillAlleles(point, parent1.getLength(), childAlleles, parent1);
         }
-        return new RefactorChromosome(childAlleles, ((RefactorChromosome)parent1).getInitGraph());
+        return new RefactorChromosome(childAlleles, ((RefactorChromosome)parent1).getOriginGraph());
     }
 
 
